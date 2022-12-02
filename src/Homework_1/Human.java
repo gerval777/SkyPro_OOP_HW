@@ -6,6 +6,23 @@ public class Human {
     private String town;
     String jobTitle;
 
+    public Human (String name, String town, int yearOfBirth, String jobTitle) {
+
+        setTown(town);
+        setYearOfBirth(yearOfBirth);
+
+        if (name == null || name.trim().isEmpty()) {
+            this.name = "Информация не указана";
+        } else {
+            this.name = name;
+        }
+        if (jobTitle == null || jobTitle.trim().isEmpty()) {
+            this.jobTitle = "Информация не указана";
+        } else {
+            this.jobTitle = jobTitle;
+        }
+    }
+
     public int getYearOfBirth() {
         return yearOfBirth;
     }
@@ -27,24 +44,6 @@ public class Human {
             this.town = "Информация не указана";
         } else {
             this.town = town;
-        }
-    }
-
-    public Human (String name, String town, int yearOfBirth, String jobTitle) {
-
-        setTown(town);
-        setYearOfBirth(yearOfBirth);
-
-        if (name == null || name.trim().isEmpty()) {
-            this.name = "Информация не указана";
-        } else {
-            this.name = name;
-        }
-
-        if (jobTitle == null || jobTitle.trim().isEmpty()) {
-            this.jobTitle = "Информация не указана";
-        } else {
-            this.jobTitle = jobTitle;
         }
     }
 

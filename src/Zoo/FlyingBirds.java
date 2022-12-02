@@ -6,13 +6,15 @@ public final class FlyingBirds extends Birds {
         super(typeOfAnimal, name, age, typeOfMovement, livingEnvironment);
     }
 
-
-
-
     public void fly() {
         System.out.println("Летает");
     }
 
+    @Override
+    public String toString() {
+        return "Птица: " + getTypeOfAnimal() + ". " + getTypeOfMovement() + ". Клтичка: " + getName() + ". Возраст: " + getAge() +
+                " лет. Среда обитания: " + getLivingEnvironment();
+    }
 
     @Override
     public void eat() {
@@ -33,22 +35,4 @@ public final class FlyingBirds extends Birds {
     public void hunting() {
         System.out.println("Охотится на рыбу или мелких грызунов \n");
     }
-
-    @Override
-    public String toString() {
-        return "Птица: " + getTypeOfAnimal()+ ". "+getTypeOfMovement()+ ". Клтичка: " + getName() + ". Возраст: " + getAge() +
-                " лет. Среда обитания: " + getLivingEnvironment();
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 }

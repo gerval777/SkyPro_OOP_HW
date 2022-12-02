@@ -2,7 +2,6 @@ package Zoo;
 
 public final class Herbivores extends Mammals{
 
-
     public Herbivores(String typeOfAnimal, String name, int age, String livingEnvironment, String movementSpeed, String typeFood) {
         super(typeOfAnimal, name, age, livingEnvironment, movementSpeed, typeFood);
     }
@@ -11,7 +10,12 @@ public final class Herbivores extends Mammals{
         System.out.println("Пасется \n");
     }
 
-
+    @Override
+    public String toString() {
+        return "Животное: " + getTypeOfAnimal()+ ". Клтичка: " + getName() + ". Возраст: " + getAge() +
+                " лет. Среда обитания: " + getLivingEnvironment() + ". Cкорость передвижения: " + getMovementSpeed() +
+                ". Пища: " + getTypeFood();
+    }
 
     @Override
     public void eat() {
@@ -31,12 +35,5 @@ public final class Herbivores extends Mammals{
     @Override
     public void walk() {
         System.out.println("Гуляет");
-    }
-
-    @Override
-    public String toString() {
-        return "Животное: " + getTypeOfAnimal()+ ". Клтичка: " + getName() + ". Возраст: " + getAge() +
-                " лет. Среда обитания: " + getLivingEnvironment() + ". Cкорость передвижения: " + getMovementSpeed() +
-                ". Пища: " + getTypeFood();
     }
 }

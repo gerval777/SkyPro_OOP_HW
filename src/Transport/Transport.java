@@ -3,7 +3,6 @@ package Transport;
 import static Transport.ValidateUtils.*;
 
 public abstract class Transport {
-
     private String brand;
     private String model;
     private int productionYear;
@@ -11,7 +10,6 @@ public abstract class Transport {
     private String color;
     private int maxSpeed;
     private double fuelPercentage;
-
 
     public Transport(String brand, String model, int productionYear, String productionCountry, int maxSpeed, String color) {
         setBrand(brand);
@@ -30,26 +28,13 @@ public abstract class Transport {
         setMaxSpeed(maxSpeed);
     }
 
-    public Transport(String brand, String model, int productionYear, String productionCountry,String color ) {
+    public Transport(String brand, String model, int productionYear, String productionCountry, String color) {
         setBrand(brand);
         setModel(model);
         setProductionCountry(productionCountry);
         setProductionYear(productionYear);
         setColor(color);
     }
-
-
-
-
-    public abstract void refill();
-
-
-
-
-
-
-
-
 
     public String getBrand() {
         return brand;
@@ -99,12 +84,9 @@ public abstract class Transport {
         this.maxSpeed = validateNumber(maxSpeed);
     }
 
-
-
     public double getFuelPercentage() {
         return fuelPercentage;
     }
-
 
     public final void setFuelPercentage(double fuelPercentage) {
         if (fuelPercentage < 0 || fuelPercentage > 100) {
@@ -114,5 +96,5 @@ public abstract class Transport {
         }
     }
 
-
+    public abstract void refill();
 }

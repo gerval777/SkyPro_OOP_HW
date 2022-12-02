@@ -12,19 +12,12 @@ public abstract class Animals {
     private int age;
     private String livingEnvironment;
 
-
     public Animals(String typeOfAnimal, String name, int age, String livingEnvironment) {
         setName(name);
         setAge(age);
         setLivingEnvironment(livingEnvironment);
         setTypeOfAnimal(typeOfAnimal);
     }
-
-
-    public abstract void eat();
-    public abstract void go();
-    public abstract void sleep();
-
 
     public String getLivingEnvironment() {
         return livingEnvironment;
@@ -59,6 +52,9 @@ public abstract class Animals {
         this.typeOfAnimal = validateDefault(typeOfAnimal);
     }
 
+    public abstract void eat();
+    public abstract void go();
+    public abstract void sleep();
 
     @Override
     public boolean equals(Object o) {

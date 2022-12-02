@@ -1,5 +1,7 @@
 package Zoo;
 
+import java.util.Objects;
+
 import static Zoo.ValidateUtils.validateDefault;
 
 public abstract class Mammals extends Animals {
@@ -12,11 +14,6 @@ public abstract class Mammals extends Animals {
         setMovementSpeed(movementSpeed);
         setTypeFood(typeFood);
     }
-
-
-    public abstract void walk();
-
-
 
     public String getTypeFood() {
         return typeFood;
@@ -34,5 +31,19 @@ public abstract class Mammals extends Animals {
         this.movementSpeed = validateDefault(movementSpeed);
     }
 
+    public abstract void walk();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Mammals mammals = (Mammals) o;
+        return Objects.equals(movementSpeed, mammals.movementSpeed) && Objects.equals(typeFood, mammals.typeFood);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), movementSpeed, typeFood);
+    }
 }

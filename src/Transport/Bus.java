@@ -9,17 +9,14 @@ public final class Bus extends Transport {
     private String busCategory;
     private int salePrice;
 
-
-    public Bus(String busCategory,String brand, String model, String productionCountry,int productionYear,
+    public Bus(String busCategory, String brand, String model, String productionCountry, int productionYear,
                int numberOfSeats, String color, int maxSpeed, int salePrice) {
 
-        super(brand,model,productionYear,productionCountry,maxSpeed,color);
+        super(brand, model, productionYear, productionCountry, maxSpeed, color);
         setBusCategory(busCategory);
         setSalePrice(salePrice);
         setNumberOfSeats(numberOfSeats);
-
     }
-
 
     public int getNumberOfSeats() {
         return numberOfSeats;
@@ -52,9 +49,9 @@ public final class Bus extends Transport {
 
     @Override
     public String toString() {
-        return "Продается " + getBusCategory()+" автобус, марки " +getBrand()+ ", модель:"+getModel()+ " от "
-                +getProductionCountry()+ " производителя. " + getProductionYear()+" года выпуска, количесво мест: "
-                +getNumberOfSeats()+", "+ getColor() + " цвета, максимальная скорость: "+getMaxSpeed()+(" км/ч. " +
-                "Всего за ") + getSalePrice()+ " Рублей.";
+        return "Продается " + getBusCategory() + " автобус, марки " + getBrand() + ", модель:" + getModel() + " от "
+                + getProductionCountry() + " производителя. " + getProductionYear() + " года выпуска, количесво мест: "
+                + getNumberOfSeats() + ", " + getColor() + " цвета, максимальная скорость: " + getMaxSpeed() + (" км/ч. " +
+                "Всего за ") + getSalePrice() + " Рублей.";
     }
 }

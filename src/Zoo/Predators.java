@@ -10,6 +10,12 @@ public final class Predators extends Mammals{
         System.out.println("Охится \n");
     }
 
+    @Override
+    public String toString() {
+        return "Животное: " + getTypeOfAnimal()+ ". Клтичка: " + getName() + ". Возраст: " + getAge() +
+                " лет. Среда обитания: " + getLivingEnvironment() + ". Cкорость передвижения: " + getMovementSpeed() +
+                ". Пища: " + getTypeFood();
+    }
 
     @Override
     public void eat() {
@@ -25,15 +31,8 @@ public final class Predators extends Mammals{
     public void sleep() {
         System.out.println("Спит в вальере");
     }
-
     @Override
     public void walk() {
         System.out.println("Гуляет в клетке");
-    }
-    @Override
-    public String toString() {
-        return "Животное: " + getTypeOfAnimal()+ ". Клтичка: " + getName() + ". Возраст: " + getAge() +
-                " лет. Среда обитания: " + getLivingEnvironment() + ". Cкорость передвижения: " + getMovementSpeed() +
-                ". Пища: " + getTypeFood();
     }
 }

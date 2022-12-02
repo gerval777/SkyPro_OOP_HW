@@ -1,8 +1,10 @@
 package Zoo;
 
+import java.util.Objects;
+
 import static Zoo.ValidateUtils.validateDefault;
 
-public abstract class Birds extends Animals{
+public abstract class Birds extends Animals {
 
     private String typeOfMovement;
 
@@ -10,16 +12,6 @@ public abstract class Birds extends Animals{
         super(typeOfAnimal, name, age, livingEnvironment);
         setTypeOfMovement(typeOfMovement);
     }
-
-
-    public abstract void hunting();
-
-
-
-
-
-
-
 
     public String getTypeOfMovement() {
         return typeOfMovement;
@@ -29,6 +21,19 @@ public abstract class Birds extends Animals{
         this.typeOfMovement = validateDefault(typeOfMovement);
     }
 
+    public abstract void hunting();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Birds birds = (Birds) o;
+        return Objects.equals(typeOfMovement, birds.typeOfMovement);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), typeOfMovement);
+    }
 }

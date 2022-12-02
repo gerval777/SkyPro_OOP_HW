@@ -3,7 +3,6 @@ package Homework_1;
 public class TestHomewor_1 {
     public static void main(String[] args) {
 
-
 // OOP_Lesson 1 Домашнее задание 1
 
         System.out.println("          OOP_Lesson 1      Домашнее задание 1" + "\n");
@@ -23,7 +22,6 @@ public class TestHomewor_1 {
         Human vladimir = new Human("Владимир", "Казань", 2001, "безработный");
         vladimir.printGreeting();
 
-
 //   OOP_Lesson 1 Домашнее задание 2
         System.out.println();
         System.out.println("         OOP_Lesson 1      Домашнее задание 2" + "\n");
@@ -41,14 +39,11 @@ public class TestHomewor_1 {
         Flower gypsophila = new Flower("Гипсофила", "", "Турция", 19.5, 10);
         System.out.println(gypsophila.toString());
 
-
         // Дополнительная задача
         System.out.println();
         System.out.println("             Дополнительная задача" + "\n");
 
-
         Flower flowerBouquet = new Flower(30, 10, 15, 10);
         System.out.println(flowerBouquet.calculationCostBouquet);
-
     }
 }

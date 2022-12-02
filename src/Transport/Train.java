@@ -10,7 +10,6 @@ public final class Train extends Transport {
     private String finalStop;
     private int numberOfCars;
 
-
     public Train(String brand, String model, int proroductionYear, String productionCountry, int maxSpeed,
                  String departureStationName, String finalStop, int tripPrice, int numberOfCars) {
 
@@ -20,7 +19,6 @@ public final class Train extends Transport {
         setFinalStop(finalStop);
         setNumberOfCars(numberOfCars);
     }
-
 
     public int getTripPrice() {
         return tripPrice;
@@ -62,8 +60,6 @@ public final class Train extends Transport {
         this.numberOfCars = validateNumber(numberOfCars);
     }
 
-
-
     public static double validateTripTime(double value) {
         return value <= 0 ? 99.99 : value;
     }
@@ -72,7 +68,6 @@ public final class Train extends Transport {
     public void refill() {
         System.out.println("Дизельный двигатель");
     }
-
 
     @Override
     public String toString() {

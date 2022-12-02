@@ -5,11 +5,9 @@ import java.time.LocalDate;
 public class TestTransport {
     public static void main(String[] args) {
 
-
 //   OOP_Lesson 2 Домашнее задание 2
         System.out.println();
         System.out.println("         OOP_Lesson 2      Домашнее задание 2" + "\n");
-
 
         Car lada = new Car("Lada", "Granta", 1.6, "", 2019,
                 "РФ", "МКПП", "Хэтчбэк", 5, "Лето", "А307  Ну051", "Y");
@@ -52,7 +50,6 @@ public class TestTransport {
         System.out.println();
         System.out.println("         OOP_Lesson 3      Домашнее задание 1" + "\n");
 
-
         Train lastochka = new Train("«Ласточка»", "B-901", 2011, "России", 301,
                 "Белорусского","Минск-Пассажирский", 3500, 11);
         System.out.println(lastochka.toString());
@@ -78,11 +75,9 @@ public class TestTransport {
                 0, 0, " ", 0, 0);
         System.out.println(testBus.toString());
 
-
 //   OOP_Lesson 3 Домашнее задание 2
         System.out.println();
         System.out.println("         OOP_Lesson 3      Домашнее задание 2" + "\n");
-
 
         Bus gaz1 = new Bus("новый", "ГАЗ", "32700", "Российского",
                 2022, 45, "Желтого", 190, 18_000_000);
@@ -98,6 +93,5 @@ public class TestTransport {
                 "Южная Корея", "    ", "      ", 0, "", " ", "Y");
         System.out.println(hyundai1.toString());
         hyundai1.refill();
-
     }
 }

@@ -89,7 +89,6 @@ public class TestAnimals {
         dodoBird.sleep();
         dodoBird.hunting();
 
-
         FlyingBirds seagull = new FlyingBirds ("Чайка", "Хади", 1, "Летающая","Болльшая часть планеты");
         System.out.println(seagull);
         seagull.fly();
@@ -106,7 +105,6 @@ public class TestAnimals {
         albatross.sleep();
         albatross.hunting();
 
-
         FlyingBirds falcon = new FlyingBirds ("Сокол", "Глаз", 3, "летающая","Почти везде");
         System.out.println(falcon);
         falcon.fly();
@@ -114,11 +112,5 @@ public class TestAnimals {
         falcon.go();
         falcon.sleep();
         falcon.hunting();
-
-
-
-
-
-
     }
 }
