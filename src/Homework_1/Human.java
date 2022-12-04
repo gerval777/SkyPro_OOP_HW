@@ -1,10 +1,12 @@
 package Homework_1;
 
+import java.util.Objects;
+
 public class Human {
     private int yearOfBirth;
-    String name;
+    private String name;
     private String town;
-    String jobTitle;
+    private String jobTitle;
 
     public Human (String name, String town, int yearOfBirth, String jobTitle) {
 
@@ -50,6 +52,20 @@ public class Human {
     public void printGreeting() {
         System.out.println("Привет! Меня зовут " + name + ". Я из города " + getTown() +
                 ". Я родился в " + getYearOfBirth() + " году. Я работаю на должности " + jobTitle + ". Будем знакомы!");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return yearOfBirth == human.yearOfBirth && Objects.equals(name, human.name) && Objects.equals(town, human.town)
+                && Objects.equals(jobTitle, human.jobTitle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(yearOfBirth, name, town, jobTitle);
     }
 }
 
