@@ -1,6 +1,7 @@
 package Transport;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import static Transport.ValidateUtils.*;
@@ -35,6 +36,7 @@ public final class Car extends Transport {
     public String getCarBodyType() {
         return carBodyType;
     }
+
     public int getNumberOfSeats() {
         return numberOfSeats;
     }
@@ -189,6 +191,19 @@ public final class Car extends Transport {
         public String validateCorrectData(String value) {
             return value == null || value.isBlank() || value.isEmpty() ? "Введите корректные данные" : value;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Key key = (Key) o;
+            return Objects.equals(remoteEngineStart, key.remoteEngineStart) && Objects.equals(keylessAccess, key.keylessAccess);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(remoteEngineStart, keylessAccess);
+        }
     }
 
     public class Insurance {
@@ -224,6 +239,37 @@ public final class Car extends Transport {
                 return insuranceValidityPeriod;
             }
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Insurance insurance = (Insurance) o;
+            return Double.compare(insurance.costOfInsurance, costOfInsurance) == 0 && Objects.equals(insuranceValidityPeriod, insurance.insuranceValidityPeriod) && Objects.equals(insuranceNumber, insurance.insuranceNumber);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(insuranceValidityPeriod, costOfInsurance, insuranceNumber);
+        }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return numberOfSeats == car.numberOfSeats && Double.compare(car.engineVolume, engineVolume) == 0 &&
+                Objects.equals(carBodyType, car.carBodyType) && Objects.equals(transmission, car.transmission) &&
+                Objects.equals(registrationNumber, car.registrationNumber) && Objects.equals(сhangingTires_Y_N,
+                car.сhangingTires_Y_N) && Objects.equals(key, car.key) && Objects.equals(insurance, car.insurance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carBodyType, numberOfSeats, engineVolume, transmission, registrationNumber,
+                сhangingTires_Y_N, key, insurance);
+    }
+
 }
 

@@ -29,4 +29,5 @@ public final class Amphibians extends Animals {
     public void sleep() {
         System.out.println("Спят в зараслях");
     }
+
 }

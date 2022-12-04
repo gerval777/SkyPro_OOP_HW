@@ -33,5 +33,6 @@ public final class FlightlessBirds extends Birds {
     @Override
     public void hunting() {
         System.out.println("Преобладаяющая часть не летающих птиц питаются зернами, но есть исключения \n");
+
     }
 }

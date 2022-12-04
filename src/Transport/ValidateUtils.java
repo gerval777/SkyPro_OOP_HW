@@ -16,4 +16,5 @@ public class ValidateUtils {
     public static Integer validateYear(Integer value) {
         return value == null || value < 0 ? 2000 : value;
     }
+
 }

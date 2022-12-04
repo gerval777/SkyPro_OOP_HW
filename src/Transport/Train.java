@@ -1,5 +1,7 @@
 package Transport;
 
+import java.util.Objects;
+
 import static Transport.ValidateUtils.*;
 
 public final class Train extends Transport {
@@ -74,4 +76,18 @@ public final class Train extends Transport {
         return "Поезд " + getBrand() + ", модель " + getModel() + ", " + getProductionYear() + " год выпуска в " + getProductionCountry() + ", скорость передвижения — " + getMaxSpeed() + " км/ч, отходит от "
                 + getDepartureStationName() + " вокзала и следует до станции " + getFinalStop() + ". Цена поездки — " + getTripPrice() + " рублей, в поезде " + getNumberOfCars() + " вагонов.";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Train train = (Train) o;
+        return tripPrice == train.tripPrice && Double.compare(train.tripTime, tripTime) == 0 && numberOfCars == train.numberOfCars && Objects.equals(departureStationName, train.departureStationName) && Objects.equals(finalStop, train.finalStop);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tripPrice, tripTime, departureStationName, finalStop, numberOfCars);
+    }
+
 }

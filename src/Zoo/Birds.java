@@ -36,4 +36,5 @@ public abstract class Birds extends Animals {
     public int hashCode() {
         return Objects.hash(super.hashCode(), typeOfMovement);
     }
+
 }

@@ -1,28 +1,28 @@
 package Homework_1;
 
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 public class Flower {
-    DecimalFormat df = new DecimalFormat("#.##");
-    String flowerType;
+    private String flowerType;
     private String flowerColor;
     private String country;
     private double cost;
-    int lifeSpan;
+    private int lifeSpan;
 
     //// Дополнительная задача
-    double initialCostBouquet;
-    double finalCostBouquet;
-    double costRose = 35.59;
-    double costChrysanthemum = 15;
-    double costPeon = 69.9;
-    double costGypsophila = 19.5;
+    private double initialCostBouquet;
+    private double finalCostBouquet;
+    private double costRose = 35.59;
+    private double costChrysanthemum = 15;
+    private double costPeon = 69.9;
+    private double costGypsophila = 19.5;
+    private int lifeSpanBouquet;
+    private int lifeSpanRose = 3;
+    private int lifeSpanChrysanthemum = 5;
+    private int lifeSpanPeon = 1;
+    private int lifeGypsophila = 10;
     public String calculationCostBouquet;
-    int lifeSpanBouquet;
-    int lifeSpanRose = 3;
-    int lifeSpanChrysanthemum = 5;
-    int lifeSpanPeon = 1;
-    int lifeGypsophila = 10;
 
     public Flower(String flowerType, String flowerColor, String country, double cost, int lifeSpan) {
 
@@ -102,6 +102,8 @@ public class Flower {
         }
     }
 
+    private DecimalFormat df = new DecimalFormat("#.##");
+
     @Override
     public String toString() {
         return "Название цветка: " + flowerType +
@@ -110,5 +112,30 @@ public class Flower {
                 ", стоимость: " + getCost() +
                 " (срок стояния: " + lifeSpan + " суток).";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flower flower = (Flower) o;
+        return Double.compare(flower.cost, cost) == 0 && lifeSpan == flower.lifeSpan && Double.compare(
+                flower.initialCostBouquet, initialCostBouquet) == 0 && Double.compare(flower.finalCostBouquet,
+                finalCostBouquet) == 0 && Double.compare(flower.costRose, costRose) == 0 && Double.compare(
+                flower.costChrysanthemum, costChrysanthemum) == 0 && Double.compare(flower.costPeon, costPeon)
+                == 0 && Double.compare(flower.costGypsophila, costGypsophila) == 0 && lifeSpanBouquet ==
+                flower.lifeSpanBouquet && lifeSpanRose == flower.lifeSpanRose && lifeSpanChrysanthemum ==
+                flower.lifeSpanChrysanthemum && lifeSpanPeon == flower.lifeSpanPeon && lifeGypsophila ==
+                flower.lifeGypsophila && Objects.equals(flowerType, flower.flowerType) && Objects.equals(flowerColor,
+                flower.flowerColor) && Objects.equals(country, flower.country) && Objects.equals(calculationCostBouquet,
+                flower.calculationCostBouquet) && Objects.equals(df, flower.df);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(flowerType, flowerColor, country, cost, lifeSpan, initialCostBouquet, finalCostBouquet,
+                costRose, costChrysanthemum, costPeon, costGypsophila, lifeSpanBouquet, lifeSpanRose, lifeSpanChrysanthemum,
+                lifeSpanPeon, lifeGypsophila, calculationCostBouquet, df);
+    }
+
 }
 

@@ -1,5 +1,7 @@
 package Transport;
 
+import java.util.Objects;
+
 import static Transport.ValidateUtils.validateDefault;
 import static Transport.ValidateUtils.validateNumber;
 
@@ -54,4 +56,18 @@ public final class Bus extends Transport {
                 + getNumberOfSeats() + ", " + getColor() + " цвета, максимальная скорость: " + getMaxSpeed() + (" км/ч. " +
                 "Всего за ") + getSalePrice() + " Рублей.";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bus bus = (Bus) o;
+        return numberOfSeats == bus.numberOfSeats && salePrice == bus.salePrice && Objects.equals(busCategory, bus.busCategory);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfSeats, busCategory, salePrice);
+    }
+
 }

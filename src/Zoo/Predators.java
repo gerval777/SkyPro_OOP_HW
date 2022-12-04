@@ -35,4 +35,5 @@ public final class Predators extends Mammals{
     public void walk() {
         System.out.println("Гуляет в клетке");
     }
+
 }
