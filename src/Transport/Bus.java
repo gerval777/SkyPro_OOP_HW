@@ -69,5 +69,4 @@ public final class Bus extends Transport {
     public int hashCode() {
         return Objects.hash(numberOfSeats, busCategory, salePrice);
     }
-
 }

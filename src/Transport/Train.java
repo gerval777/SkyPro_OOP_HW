@@ -89,5 +89,4 @@ public final class Train extends Transport {
     public int hashCode() {
         return Objects.hash(tripPrice, tripTime, departureStationName, finalStop, numberOfCars);
     }
-
 }

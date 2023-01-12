@@ -136,6 +136,5 @@ public class Flower {
                 costRose, costChrysanthemum, costPeon, costGypsophila, lifeSpanBouquet, lifeSpanRose, lifeSpanChrysanthemum,
                 lifeSpanPeon, lifeGypsophila, calculationCostBouquet, df);
     }
-
 }
 

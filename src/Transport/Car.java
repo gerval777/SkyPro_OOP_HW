@@ -271,5 +271,11 @@ public final class Car extends Transport {
                 сhangingTires_Y_N, key, insurance);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(carBodyType, numberOfSeats, engineVolume, transmission, registrationNumber,
+                сhangingTires_Y_N, key, insurance);
+    }
+
 }
 
