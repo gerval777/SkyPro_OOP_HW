@@ -46,4 +46,5 @@ public abstract class Mammals extends Animals {
     public int hashCode() {
         return Objects.hash(super.hashCode(), movementSpeed, typeFood);
     }
+
 }

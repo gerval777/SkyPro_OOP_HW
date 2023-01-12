@@ -36,4 +36,5 @@ public final class Herbivores extends Mammals{
     public void walk() {
         System.out.println("Гуляет");
     }
+
 }

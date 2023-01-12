@@ -9,5 +9,6 @@ public class ValidateUtils {
     public static Integer validateNumber(Integer value) {
         return value == null || value < 0 ? 0000 : value;
     }
+
 }
 

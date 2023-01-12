@@ -35,4 +35,5 @@ public final class FlyingBirds extends Birds {
     public void hunting() {
         System.out.println("Охотится на рыбу или мелких грызунов \n");
     }
+
 }

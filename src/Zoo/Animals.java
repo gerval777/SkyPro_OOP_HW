@@ -68,6 +68,7 @@ public abstract class Animals {
     public int hashCode() {
         return Objects.hash(typeOfAnimal, name, age, livingEnvironment);
     }
+
 }
 
 

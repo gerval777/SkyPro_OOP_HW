@@ -46,4 +46,5 @@ public class TestHomewor_1 {
         Flower flowerBouquet = new Flower(30, 10, 15, 10);
         System.out.println(flowerBouquet.calculationCostBouquet);
     }
+
 }
